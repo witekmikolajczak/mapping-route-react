@@ -67,8 +67,6 @@ export const Searcher = (props) => {
     props.departure(departure);
     props.arrival(arrival);
     props.isLoading(isLoading);
-    setIsSaveHistory(true);
-
     navigate("/map", { replace: true });
   };
 
@@ -133,12 +131,10 @@ export const Searcher = (props) => {
         </div>
         <div className="row justify-content-center"></div>
       </form>
-      {isSaveHistory && (
-        <SavedRoutes
-          departurePoint={departure.text}
-          arrivalPoint={arrival.text}
-        />
-      )}
+      <SavedRoutes
+        departurePoint={departure.text}
+        arrivalPoint={arrival.text}
+      />
     </div>
   );
 };
